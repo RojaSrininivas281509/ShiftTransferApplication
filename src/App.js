@@ -9,6 +9,7 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<TaskList />} />
+          
           <Route path="/add-task" element={<AddTask />} />
         </Routes>
       </div>

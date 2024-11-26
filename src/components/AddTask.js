@@ -53,6 +53,7 @@ const AddTask = () => {
         fullWidth
         sx={{ mb: 2 }}
         value={task.title}
+        
         onChange={(e) => setTask({ ...task, title: e.target.value })}
       />
 
