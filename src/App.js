@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header  from './Header';
-import LoginForm from './LoginForm';
-import RegistrationForm from './Registration';
+import Header  from './components/Header';
+import LoginForm from './components/LoginForm';
+import RegistrationForm from './components/Registration';
 import TaskList from "./components/TaskList";
 import AddTask from "./components/AddTask";
 

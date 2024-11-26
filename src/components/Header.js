@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { HomeImg } from './utility/common';
-import './App.css'
+import { HomeImg } from '../utility/common';
+import '../App.css'
 
 const Header = () => {
     return (

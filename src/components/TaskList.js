@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from "react";
 import {
   Box,
@@ -17,7 +18,8 @@ import {
   DialogTitle,
   TextField,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
+import ReportAnalytics from "./ReportAnalytics";
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -25,6 +27,7 @@ const TaskList = () => {
   const [filterStatus, setFilterStatus] = useState("All");
   const [sortPriority, setSortPriority] = useState("HighToLow");
   const [sortStatus, setSortStatus] = useState("PendingFirst");
+  const [supervisorFeedback, setSupervisorFeedback] = useState('');
 
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
@@ -37,7 +40,7 @@ const TaskList = () => {
     priority: "High",
   });
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -184,7 +187,7 @@ const TaskList = () => {
 
       {/* Task Cards */}
       <Grid container spacing={2}>
-        {filteredAndSortedTasks.map((task, index) => (
+        {filteredAndSortedTasks.map((task) => (
           <Grid item xs={12} md={6} lg={4} key={task.id}>
             <Card sx={{ mb: 2 }} onClick={() => handleTaskClick(task)}>
               <CardContent>
@@ -201,8 +204,8 @@ const TaskList = () => {
                   color={task.status === "Pending" ? "success" : "error"}
                   sx={{ mt: 2 }}
                   onClick={(e) => {
-                    e.stopPropagation(); 
-                    toggleTaskStatus(task.id); 
+                    e.stopPropagation();
+                    toggleTaskStatus(task.id);
                   }}
                 >
                   {task.status === "Pending" ? "Mark as Completed" : "Mark as Pending"}
@@ -212,7 +215,7 @@ const TaskList = () => {
                   color="primary"
                   sx={{ mt: 2, ml: 1 }}
                   onClick={(e) => {
-                    e.stopPropagation(); 
+                    e.stopPropagation();
                     handleTaskClick(task);
                   }}
                 >
@@ -224,6 +227,7 @@ const TaskList = () => {
         ))}
       </Grid>
 
+      {/* Edit Task Dialog */}
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>Edit Task</DialogTitle>
         <DialogContent>
@@ -294,12 +298,17 @@ const TaskList = () => {
           </FormControl>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseDialog}>Cancel</Button>
+          <Button onClick={handleCloseDialog} color="secondary">
+            Cancel
+          </Button>
           <Button onClick={handleEditTask} color="primary">
-            Save Changes
+            Save
           </Button>
         </DialogActions>
       </Dialog>
+
+      {/* Analytics (Report) Section */}
+      <ReportAnalytics tasks={tasks} supervisorFeedback={supervisorFeedback} />
     </Box>
   );
 };
