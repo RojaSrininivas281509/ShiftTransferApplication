@@ -202,14 +202,14 @@ const TaskList = () => {
                 <Typography>Priority: {task.priority}</Typography>
                 <Button
                   variant="outlined"
-                  color={task.status === "Pending" ? "success" : "error"}
+                  color={task.status === "Pending" ? "error" : "success"}
                   sx={{ mt: 2 }}
                   onClick={(e) => {
                     e.stopPropagation();
                     toggleTaskStatus(task.id);
                   }}
                 >
-                  {task.status === "Pending" ? "Mark as Completed" : "Mark as Pending"}
+                  {task.status === "Pending" ?  "Mark as Pending" : "Mark as Completed"}
                 </Button>
                 <Button
                   variant="outlined"

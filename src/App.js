@@ -5,7 +5,7 @@ import LoginForm from './components/LoginForm';
 import RegistrationForm from './components/Registration';
 import TaskList from "./components/TaskList";
 import AddTask from "./components/AddTask";
-import ShiftConfiguration from './components/ShiftConfiguration';
+import ShiftComparison from './components/ShiftComparison';
 
 
 
@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/" element={<TaskList />} />
           <Route path="/add-task" element={<AddTask />} />
-          <Route path="/ShiftConfiguration" element={<ShiftConfiguration/>} />
+          <Route path="/ShiftConfiguration" element={<ShiftComparison/>} />
         </Routes>
       </Router>  
     </div>
