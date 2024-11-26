@@ -1,0 +1,41 @@
+/* App.css */
+
+.register-container {
+    max-width: 400px; /* Set max width */
+    margin: 50px auto; /* Center the form */
+    padding: 20px; /* Padding */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow */
+    background-color: white; /* White background */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between fields */
+}
+
+label {
+    display: block; /* Block label */
+    margin-bottom: 5px; /* Space below label */
+}
+
+input {
+    width: 100%; /* Full width */
+    padding: 8px; /* Padding inside input */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.btn-register {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.btn-register:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
