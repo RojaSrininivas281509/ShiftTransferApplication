@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './utility/style.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [shift, setShift] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +19,7 @@ const LoginForm = () => {
       // Check if username and password match
       if (userData.username === username && userData.password === password) {
         setShift(userData.shift);
+        navigate('/')
         setMessage(`Login successful. You are on the ${userData.shift} shift.`);
       } else {
         setMessage('Invalid credentials');

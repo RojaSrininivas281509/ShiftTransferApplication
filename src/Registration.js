@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './utility/registration.css';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const [username, setUsername] = useState('');
@@ -7,6 +8,7 @@ const RegistrationForm = () => {
   const [shift, setShift] = useState('Morning');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   // Function to validate the password
   const validatePassword = (password) => {
@@ -50,6 +52,7 @@ const RegistrationForm = () => {
     // Save user data in localStorage
     const userData = { username, password, shift };
     localStorage.setItem('userData', JSON.stringify(userData));
+    navigate('/login')
 
     // Clear form and show success message
     setUsername('');
