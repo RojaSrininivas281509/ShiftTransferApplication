@@ -38,6 +38,7 @@ const TaskList = () => {
     shift: "Morning",
     status: "Pending",
     priority: "High",
+    comments: [],
   });
 
   const navigate = useNavigate();
@@ -179,7 +180,7 @@ const TaskList = () => {
         <Button
           variant="contained"
           color="primary"
-          onClick={() => navigate("/add-task")} // Navigate to add task
+          onClick={() => navigate("/add-task")} 
         >
           Add Task
         </Button>
