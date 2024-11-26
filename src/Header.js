@@ -16,6 +16,7 @@ const Header = () => {
             <div className="nav-items">
                 <nav className="navbar">
                     <ul>
+                        <li><NavLink to='/registration' activeClassName="active">Registration</NavLink></li>
                         <li><NavLink to='/login' activeClassName="active">Login</NavLink></li>
                     </ul>
                 </nav>
